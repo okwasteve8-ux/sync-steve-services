@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SwiftSync Services - RELIABLE • FAST • AFFORDABLE</title>
+<style>
+body{font-family:Arial,sans-serif;margin:0;background:#f4f4f4;color:#333;}
+header{background:#0a7cff;color:white;padding:20px;text-align:center;}
+header h1{margin:0;}
+header p{font-size:16px;margin-top:5px;}
+.container{padding:40px;max-width:900px;margin:auto;}
+h2{color:#0a7cff;}
+select{padding:10px;width:100%;border-radius:6px;margin-top:10px;margin-bottom:20px;}
+#description{background:white;padding:20px;border-radius:10px;box-shadow:0 0 10px rgba(0,0,0,0.1);margin-bottom:20px;}
+button{background:#0a7cff;color:white;border:none;padding:10px 20px;border-radius:6px;cursor:pointer;margin-top:10px;}
+button:hover{background:#065fd4;}
+#payment{display:none;margin-top:30px;padding:30px;background:white;border-radius:10px;box-shadow:0 0 10px rgba(0,0,0,0.1);}
+iframe{width:100%;height:600px;border:none;border-radius:8px;}
+footer{background:#111;color:white;text-align:center;padding:20px;margin-top:40px;}
+</style>
+</head>
+<body>
+
+<header>
+<h1>SwiftSync Services</h1>
+<p>RELIABLE • FAST • AFFORDABLE</p>
+</header>
+
+<div class="container">
+<h2>Select a Service</h2>
+<select id="serviceSelect" onchange="showDescription()">
+<option value="">-- Select Service --</option>
+
+<option value="TSC">TSC Services</option>
+<option value="KNEC">KNEC Services</option>
+<option value="KRA">KRA Services</option>
+<option value="Education">Education Services</option>
+<option value="Social">Social Services</option>
+<option value="Other">Other Essential Services</option>
+
+</select>
+
+<div id="description">Service description will appear here.</div>
+
+<button onclick="showPayment()">Pay / Consultation</button>
+
+<div id="payment">
+<h2>Complete Payment via M-Pesa</h2>
+<p>Enter your M-Pesa number and confirm payment below:</p>
+<iframe src="https://megapay.co.ke/tags/S1TBH9b"></iframe>
+</div>
+</div>
+
+<footer>
+<p>© 2026 SwiftSync Services - RELIABLE • FAST • AFFORDABLE</p>
+</footer>
+
+<script>
+const serviceDescriptions = {
+"TSC": `
+<ul>
+<li>TSC Number Issues (Reset / Incomplete)</li>
+<li>TSC Number Application</li>
+<li>TSC Certificate Processing</li>
+<li>Duplicate TSC Certificate Application</li>
+<li>TSC Leave Application</li>
+<li>TSC Transfer Application</li>
+<li>TSC Forms Processing (Next of Kin, Bank Forms)</li>
+</ul>
+`,
+"KNEC": `
+<ul>
+<li>Results Confirmation</li>
+<li>Lost Certificate Certification</li>
+<li>Biodata Amendment Application</li>
+</ul>
+`,
+"KRA": `
+<ul>
+<li>KRA PIN Application</li>
+<li>KRA Nil Returns Filing</li>
+<li>KRA Returns Filing (With or Without P9)</li>
+<li>KRA Withholding Tax Application</li>
+<li>Retrieval of Lost KRA PIN</li>
+<li>KRA Email Change</li>
+</ul>
+`,
+"Education": `
+<ul>
+<li>Grade 1–10 Lesson Notes</li>
+<li>Schemes of Work & Lesson Plans</li>
+<li>Exams & Marking Schemes</li>
+</ul>
+`,
+"Social": `
+<ul>
+<li>SHA Application / Number Update</li>
+<li>SHA Contribution Reduction to KES 500</li>
+<li>NSSF Application</li>
+</ul>
+`,
+"Other": `
+<ul>
+<li>Passport Application</li>
+<li>Certificate of Good Conduct</li>
+<li>Birth Certificate Application</li>
+<li>CV Writing & Editing</li>
+<li>CRB Issues Assistance</li>
+<li>Affidavits & GP 69</li>
+<li>Medical & Poster Services</li>
+<li>Licence & KCPE/KCSE Certificates</li>
+</ul>
+`
+};
+
+function showDescription(){
+const selected = document.getElementById("serviceSelect").value;
+document.getElementById("description").innerHTML = serviceDescriptions[selected] || "Service description will appear here.";
+}
+
+function showPayment(){
+document.getElementById("payment").style.display="block";
+window.scrollTo(0,document.body.scrollHeight);
+}
+</script>
+
+</body>
+</html>
